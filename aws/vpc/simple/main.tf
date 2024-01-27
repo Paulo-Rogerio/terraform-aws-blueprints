@@ -34,6 +34,16 @@ locals {
   public_subnets       = slice(local.ec2_public_subnet_cidrs, 0, local.number_of_azs)
   private_subnets      = slice(local.ec2_private_subnet_cidrs, 0, local.number_of_azs)
 
+  extra_security_group_ingress = [
+    for spec in var.allow_cidr_blocks :
+    {
+      from_port   = lookup(spec, "from_port", 0)
+      to_port     = lookup(spec, "to_port", 0)
+      protocol    = lookup(spec, "protocol", -1)
+      cidr_blocks = spec.cidr_block
+      description = spec.description
+    }
+  ]
 }
 
 # ------------------------------------------------------------------------------
