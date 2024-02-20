@@ -8,18 +8,12 @@ locals {
   # CIDRs dedicated to EC2/non-Kubernetes workloads
   ec2_public_subnet_cidrs = [
     cidrsubnet(var.cidr, 5, 0), # e.g. 10.0.0.0/21
-    cidrsubnet(var.cidr, 5, 1), # e.g. 10.0.8.0/21
-    cidrsubnet(var.cidr, 5, 2),
-    cidrsubnet(var.cidr, 5, 3),
-    cidrsubnet(var.cidr, 5, 4),
+    cidrsubnet(var.cidr, 5, 1) # e.g. 10.0.8.0/21
   ]
 
   ec2_private_subnet_cidrs = [
     cidrsubnet(var.cidr, 5, 5),
-    cidrsubnet(var.cidr, 5, 6),
-    cidrsubnet(var.cidr, 5, 7),
-    cidrsubnet(var.cidr, 5, 8),
-    cidrsubnet(var.cidr, 5, 9),
+    cidrsubnet(var.cidr, 5, 6)
   ]
 
 
