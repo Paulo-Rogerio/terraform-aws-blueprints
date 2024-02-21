@@ -12,20 +12,21 @@ locals {
     cidrsubnet(var.cidr, 5, 2),
     cidrsubnet(var.cidr, 5, 3), 
     cidrsubnet(var.cidr, 5, 4), 
-    cidrsubnet(var.cidr, 5, 5), 
   ]
 
   ec2_private_subnet_cidrs = [
+    cidrsubnet(var.cidr, 5, 5), 
     cidrsubnet(var.cidr, 5, 6),
     cidrsubnet(var.cidr, 5, 7),
     cidrsubnet(var.cidr, 5, 8),
+    cidrsubnet(var.cidr, 5, 9),
   ]
 
 
   number_of_azs_per_region = {
-    us-east-1 = 3
-    us-east-2 = 3
-    sa-east-1 = 3
+    us-east-1 = 2
+    us-east-2 = 2
+    sa-east-1 = 2
   }
 
   number_of_azs = local.number_of_azs_per_region[var.aws_region]
