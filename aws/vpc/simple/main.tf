@@ -18,7 +18,7 @@ locals {
 
 
   number_of_azs_per_region = {
-    us-east-1 = 1
+    us-east-1 = 2
     us-east-2 = 3
     sa-east-1 = 3
   }
