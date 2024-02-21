@@ -19,9 +19,6 @@ locals {
     cidrsubnet(var.cidr, 5, 6),
     cidrsubnet(var.cidr, 5, 7),
     cidrsubnet(var.cidr, 5, 8),
-    cidrsubnet(var.cidr, 5, 9),
-    cidrsubnet(var.cidr, 5, 10),
-    cidrsubnet(var.cidr, 5, 11),
   ]
 
 
